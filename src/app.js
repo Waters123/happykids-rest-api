@@ -30,8 +30,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/products", productRoutes);
-app.use("/orders", orderRoutes);
+app.use(`${process.env.API_ENPOINT}/products`, productRoutes);
+app.use(`${process.env.API_ENPOINT}/orders`, orderRoutes);
 
 app.use((req, res, next) => {
   const error = new Error("Not Found");
